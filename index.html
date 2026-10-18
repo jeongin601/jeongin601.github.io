@@ -3,189 +3,207 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Jeongin Bae — Researcher</title>
+<title>Jeongin Bae</title>
 <style>
   :root {
-    --navy: #1a2e4a;
-    --navy-mid: #2b4a72;
-    --navy-light: #3d6b9e;
-    --navy-pale: #dce8f5;
-    --black: #111111;
-    --dark: #222222;
-    --mid: #555555;
-    --light: #888888;
-    --bg: #fafafa;
-    --white: #ffffff;
-    --border: #d8d8d8;
+    --accent: #4f8ef7;
+    --accent-light: #e8f0fe;
+    --black: #111;
+    --dark: #333;
+    --mid: #666;
+    --light: #999;
+    --border: #e5e5e5;
+    --bg: #fff;
+    --tag-bg: #f0f4ff;
+    --tag-color: #3a6bd4;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; }
   body {
-    font-family: 'Georgia', serif;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     background: var(--bg);
     color: var(--dark);
-    line-height: 1.75;
-    font-size: 15.5px;
+    line-height: 1.7;
+    font-size: 15px;
   }
 
   /* ── NAV ── */
   nav {
     position: sticky; top: 0; z-index: 100;
-    background: var(--white);
-    border-bottom: 2px solid var(--navy);
-    display: flex; justify-content: center; gap: 2.5rem;
-    padding: 0.65rem 1rem;
+    background: rgba(255,255,255,0.92);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border);
+    display: flex; justify-content: center; gap: 2rem;
+    padding: 0.7rem 1rem;
     flex-wrap: wrap;
   }
   nav a {
-    color: var(--navy);
+    color: var(--mid);
     text-decoration: none;
-    font-family: 'Georgia', serif;
     font-size: 0.85rem;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 0.03em;
     transition: color 0.2s;
   }
-  nav a:hover { color: var(--navy-light); }
+  nav a:hover { color: var(--accent); }
 
   /* ── HERO ── */
   #hero {
-    background: var(--white);
-    border-bottom: 1px solid var(--border);
-    padding: 4rem 1.5rem 3.5rem;
-    text-align: center;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 4.5rem 1.5rem 3.5rem;
+    display: flex;
+    gap: 2.5rem;
+    align-items: flex-start;
+    flex-wrap: wrap;
   }
-  #hero h1 {
-    font-size: 2.4rem;
-    letter-spacing: 0.04em;
+  .hero-photo {
+    width: 120px; height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    background: var(--accent-light);
+    flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 3rem;
+    border: 3px solid var(--border);
+  }
+  .hero-text { flex: 1; min-width: 220px; }
+  .hero-text h1 {
+    font-size: 2rem;
+    font-weight: 700;
     color: var(--black);
-    margin-bottom: 0.4rem;
+    letter-spacing: -0.01em;
+    margin-bottom: 0.2rem;
   }
-  #hero .subtitle {
-    font-size: 1rem;
+  .hero-text .role {
+    font-size: 0.9rem;
     color: var(--mid);
-    font-style: italic;
-    margin-bottom: 1.4rem;
+    margin-bottom: 1rem;
   }
-  .hero-links { display: flex; justify-content: center; gap: 1.1rem; flex-wrap: wrap; }
+  .hero-text .bio {
+    font-size: 0.9rem;
+    color: var(--dark);
+    line-height: 1.75;
+    margin-bottom: 1.2rem;
+  }
+  .hero-links { display: flex; gap: 0.7rem; flex-wrap: wrap; }
   .hero-links a {
-    display: inline-block;
-    padding: 0.38rem 1.1rem;
-    border: 1.5px solid var(--navy);
-    border-radius: 3px;
-    color: var(--navy);
+    display: inline-flex; align-items: center; gap: 0.3rem;
+    padding: 0.3rem 0.85rem;
+    border-radius: 20px;
+    background: var(--accent-light);
+    color: var(--accent);
     text-decoration: none;
-    font-family: Arial, sans-serif;
-    font-size: 0.82rem;
-    letter-spacing: 0.04em;
+    font-size: 0.8rem;
+    font-weight: 600;
     transition: background 0.2s, color 0.2s;
   }
-  .hero-links a:hover {
-    background: var(--navy);
-    color: var(--white);
-  }
+  .hero-links a:hover { background: var(--accent); color: #fff; }
 
-  /* ── SECTION WRAPPER ── */
+  /* ── SECTION ── */
   .section {
-    max-width: 860px;
+    max-width: 720px;
     margin: 0 auto;
-    padding: 3rem 1.5rem;
+    padding: 2.5rem 1.5rem;
+    border-top: 1px solid var(--border);
   }
-  .section + .section { border-top: 1px solid var(--border); }
-
   h2 {
-    font-size: 1.08rem;
+    font-size: 0.75rem;
     text-transform: uppercase;
     letter-spacing: 0.12em;
-    color: var(--navy);
-    margin-bottom: 1.6rem;
-    padding-bottom: 0.45rem;
-    border-bottom: 2px solid var(--navy);
-    display: inline-block;
-  }
-
-  /* ── EXPERIENCE / EDU ROW ── */
-  .entry { margin-bottom: 1.6rem; }
-  .entry-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    flex-wrap: wrap;
-    gap: 0.3rem;
-  }
-  .entry-title { font-weight: bold; color: var(--black); font-size: 1rem; }
-  .entry-loc { color: var(--light); font-size: 0.85rem; font-family: Arial, sans-serif; }
-  .entry-role {
-    color: var(--navy-mid);
-    font-style: italic;
-    font-size: 0.95rem;
-    margin-top: 0.15rem;
-  }
-  .entry ul {
-    margin-top: 0.5rem;
-    padding-left: 1.3rem;
-  }
-  .entry li { font-size: 0.9rem; color: var(--mid); margin-bottom: 0.25rem; }
-
-  /* ── PUBLICATIONS ── */
-  .pub-year {
-    font-size: 0.78rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--navy-light);
-    margin: 1.6rem 0 0.6rem;
-    font-family: Arial, sans-serif;
-  }
-  .pub-item { margin-bottom: 1rem; padding-left: 1rem; border-left: 3px solid var(--navy-pale); }
-  .pub-item .pub-title { font-weight: bold; color: var(--black); font-size: 0.95rem; }
-  .pub-item .pub-authors { font-size: 0.85rem; color: var(--mid); margin-top: 0.1rem; }
-  .pub-item .pub-venue {
-    display: inline-block;
-    margin-top: 0.3rem;
-    font-size: 0.78rem;
-    background: var(--navy-pale);
-    color: var(--navy);
-    padding: 0.1rem 0.55rem;
-    border-radius: 2px;
-    font-family: Arial, sans-serif;
+    color: var(--light);
+    margin-bottom: 1.5rem;
     font-weight: 600;
   }
 
-  /* ── PROJECT CARDS ── */
-  .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1.2rem; }
-  .card {
-    background: var(--white);
-    border: 1px solid var(--border);
-    border-top: 3px solid var(--navy);
-    padding: 1.2rem 1.3rem;
-    border-radius: 2px;
-    transition: box-shadow 0.2s;
+  /* ── PUBLICATIONS ── */
+  .pub-item {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    align-items: flex-start;
   }
-  .card:hover { box-shadow: 0 4px 16px rgba(26,46,74,0.10); }
-  .card-title { font-weight: bold; color: var(--black); font-size: 0.93rem; margin-bottom: 0.4rem; }
-  .card-org { font-size: 0.78rem; color: var(--navy-light); font-family: Arial, sans-serif; margin-bottom: 0.6rem; }
-  .card-body { font-size: 0.87rem; color: var(--mid); line-height: 1.6; }
+  .pub-year-badge {
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--accent);
+    background: var(--accent-light);
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    flex-shrink: 0;
+    margin-top: 0.15rem;
+    min-width: 42px;
+    text-align: center;
+  }
+  .pub-body { flex: 1; }
+  .pub-title {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--black);
+    line-height: 1.5;
+  }
+  .pub-authors {
+    font-size: 0.82rem;
+    color: var(--mid);
+    margin-top: 0.15rem;
+  }
+  .pub-authors .me { font-weight: 700; color: var(--dark); }
+  .pub-venue {
+    display: inline-block;
+    margin-top: 0.3rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--accent);
+    background: var(--tag-bg);
+    padding: 0.1rem 0.5rem;
+    border-radius: 4px;
+  }
 
-  /* ── TALKS / OSS / MENTORING ── */
-  .item-row { margin-bottom: 1.3rem; }
-  .item-row .item-title { font-weight: bold; color: var(--black); font-size: 0.95rem; }
-  .item-row .item-meta { font-size: 0.83rem; color: var(--navy-light); font-family: Arial, sans-serif; margin-top: 0.1rem; }
-  .item-row .item-body { font-size: 0.88rem; color: var(--mid); margin-top: 0.3rem; }
+  /* ── EXPERIENCE / EDU ── */
+  .entry { margin-bottom: 1.4rem; display: flex; gap: 1rem; align-items: flex-start; }
+  .entry-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--accent);
+    margin-top: 0.5rem;
+    flex-shrink: 0;
+  }
+  .entry-body { flex: 1; }
+  .entry-title { font-weight: 700; font-size: 0.92rem; color: var(--black); }
+  .entry-role { font-size: 0.85rem; color: var(--mid); margin-top: 0.1rem; }
+
+  /* ── TAGS ── */
+  .tag {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--tag-color);
+    background: var(--tag-bg);
+    padding: 0.15rem 0.55rem;
+    border-radius: 4px;
+    margin: 0.2rem 0.15rem 0 0;
+  }
+
+  /* ── MISC ITEMS ── */
+  .misc-item { margin-bottom: 1.3rem; }
+  .misc-title { font-size: 0.9rem; font-weight: 600; color: var(--black); }
+  .misc-meta { font-size: 0.8rem; color: var(--accent); margin-top: 0.1rem; }
+  .misc-body { font-size: 0.85rem; color: var(--mid); margin-top: 0.25rem; }
 
   /* ── FOOTER ── */
   footer {
     text-align: center;
-    padding: 2rem 1rem;
-    font-size: 0.8rem;
+    padding: 2.5rem 1rem;
+    font-size: 0.78rem;
     color: var(--light);
     border-top: 1px solid var(--border);
-    font-family: Arial, sans-serif;
   }
 
   @media (max-width: 600px) {
-    #hero h1 { font-size: 1.8rem; }
-    .entry-header { flex-direction: column; }
-    .cards { grid-template-columns: 1fr; }
+    #hero { flex-direction: column; align-items: center; text-align: center; }
+    .hero-links { justify-content: center; }
+    .pub-item { flex-direction: column; gap: 0.4rem; }
+    .pub-year-badge { width: fit-content; }
   }
 </style>
 </head>
@@ -193,245 +211,190 @@
 
 <!-- NAV -->
 <nav>
-  <a href="#experience">Experience</a>
+  <a href="#about">About</a>
   <a href="#publications">Publications</a>
-  <a href="#projects">Projects</a>
+  <a href="#experience">Experience</a>
   <a href="#talks">Talks</a>
-  <a href="#oss">Open Source</a>
-  <a href="#mentoring">Mentoring</a>
+  <a href="#service">Service</a>
   <a href="#education">Education</a>
 </nav>
 
 <!-- HERO -->
-<section id="hero">
-  <h1>Jeongin Bae</h1>
-  <p class="subtitle">Research Engineer · AI Model Efficiency &amp; Quantization</p>
-  <div class="hero-links">
-    <a href="mailto:#0200angela@gmail.com">✉ Email</a>
-    <a href="https://github.com/" target="_blank">⊕ GitHub</a>
-    <a href="https://scholar.google.com/" target="_blank">◎ Google Scholar</a>
-  </div>
-</section>
-
-<!-- EXPERIENCE -->
-<div id="experience" class="section">
-  <h2>Work Experience</h2>
-
-  <div class="entry">
-    <div class="entry-header">
-      <span class="entry-title">Qualcomm Korea</span>
-      <span class="entry-loc">Seoul, Korea</span>
+<section id="about">
+<div id="hero">
+  <div class="hero-photo">👨‍💻</div>
+  <div class="hero-text">
+    <h1>Jeongin Bae</h1>
+    <p class="role">Research Engineer · Qualcomm Korea, AI Research</p>
+    <p class="bio">
+      I'm an outgoing and curious researcher who genuinely loves digging deep into problems.
+      My work spans <strong>quantization</strong>, efficient attention, pruning, and distillation —
+      but quantization is where I've spent by far the most time and energy, from PTQ and QAT to
+      BCQ and KV cache optimization. I also have a strong foundation in
+      <strong>distillation and pruning</strong>, and I'm always excited to explore new directions
+      at the intersection of efficiency and model quality.
+    </p>
+    <div class="hero-links">
+      <a href="mailto:jeonbae@qti.qualcomm.com">✉ Email</a>
+      <a href="https://github.com/jeongin601" target="_blank">⊕ GitHub</a>
+      <a href="https://scholar.google.com/" target="_blank">◎ Scholar</a>
     </div>
-    <div class="entry-role">Research Engineer, AI Model Efficiency (Quantization) System &nbsp;·&nbsp; Jul. 2026 –</div>
-  </div>
-
-  <div class="entry">
-    <div class="entry-header">
-      <span class="entry-title">NAVER Cloud, Hyperscale AI Efficiency Team</span>
-      <span class="entry-loc">Seoul, Korea</span>
-    </div>
-    <div class="entry-role">Research Engineer &nbsp;·&nbsp; Jun. 2023 – Jul. 2026</div>
-  </div>
-
-  <div class="entry">
-    <div class="entry-header">
-      <span class="entry-title">NAVER Cloud, Efficient AI Team</span>
-      <span class="entry-loc">Seoul, Korea</span>
-    </div>
-    <div class="entry-role">Research Intern &nbsp;·&nbsp; Mar. 2022 – Aug. 2022</div>
   </div>
 </div>
+</section>
 
 <!-- PUBLICATIONS -->
 <div id="publications" class="section">
   <h2>Publications</h2>
-  <p style="font-size:0.83rem;color:var(--light);margin-bottom:0.4rem;font-family:Arial,sans-serif;">* indicates equal contribution</p>
 
-  <div class="pub-year">2026</div>
-
+  <!-- 2026 -->
   <div class="pub-item">
-    <div class="pub-title">Affine-Scaled Attention: Towards Flexible and Stable Transformer Attention</div>
-    <div class="pub-authors">Jeongin Bae*, Baeseong Park*, Gunho Park, Minsub Kim, Joonhyung Lee, Junhee Yoo, Sunghyeon Woo, Jiwon Ryu, Se Jung Kwon, Dongsoo Lee</div>
-    <span class="pub-venue">ICML 2026</span>
+    <div class="pub-year-badge">2026</div>
+    <div class="pub-body">
+      <div class="pub-title">Affine-Scaled Attention: Towards Flexible and Stable Transformer Attention</div>
+      <div class="pub-authors"><span class="me">Jeongin Bae*</span>, Baeseong Park*, Gunho Park, Minsub Kim, Joonhyung Lee, Junhee Yoo, Sunghyeon Woo, Jiwon Ryu, Se Jung Kwon, Dongsoo Lee</div>
+      <span class="pub-venue">ICML 2026</span>
+      <span class="tag">Efficient Attention</span>
+    </div>
+  </div>
+  <div class="pub-item">
+    <div class="pub-year-badge">2026</div>
+    <div class="pub-body">
+      <div class="pub-title">AnyBCQ: Hardware-Efficient Flexible Binary-Coded Quantization for Multi-Precision LLMs</div>
+      <div class="pub-authors">Gunho Park, <span class="me">Jeongin Bae</span>, Beomseok Kwon, Byeongwook Kim, Se Jung Kwon, Dongsoo Lee</div>
+      <span class="pub-venue">ICLR 2026</span>
+      <span class="tag">Quantization</span>
+      <span class="tag">Hardware</span>
+    </div>
   </div>
 
-  <div class="pub-year">2025</div>
-
+  <!-- 2025 -->
   <div class="pub-item">
-    <div class="pub-title">Figlut: An Energy-Efficient Accelerator Design for FP-INT GEMM Using Look-Up Tables</div>
-    <div class="pub-authors">Gunho Park, Hyeokjun Kwon, Jiwoo Kim, Jeongin Bae, Baeseong Park, Dongsoo Lee, Youngjoo Lee</div>
-    <span class="pub-venue">HPCA 2025</span>
+    <div class="pub-year-badge">2025</div>
+    <div class="pub-body">
+      <div class="pub-title">Unifying Uniform and Binary-Coding Quantization for Accurate Compression of Large Language Models</div>
+      <div class="pub-authors">Seungcheol Park, <span class="me">Jeongin Bae</span>, Beomseok Kwon, Minjun Kim, Byeongwook Kim, Se Jung Kwon, U Kang, Dongsoo Lee</div>
+      <span class="pub-venue">ACL 2025</span>
+      <span class="tag">Quantization</span>
+    </div>
+  </div>
+  <div class="pub-item">
+    <div class="pub-year-badge">2025</div>
+    <div class="pub-body">
+      <div class="pub-title">CodeGEMM: A Codebook-Centric Approach to Efficient GEMM in Quantized LLMs</div>
+      <div class="pub-authors">Gunho Park, <span class="me">Jeongin Bae</span>, Byeongwook Kim, Jiwon Ryu, Hoseung Kim, Se Jung Kwon, Dongsoo Lee</div>
+      <span class="pub-venue">NeurIPS 2025</span>
+      <span class="tag">Hardware</span>
+      <span class="tag">Quantization</span>
+    </div>
+  </div>
+  <div class="pub-item">
+    <div class="pub-year-badge">2025</div>
+    <div class="pub-body">
+      <div class="pub-title">Figlut: An Energy-Efficient Accelerator Design for FP-INT GEMM Using Look-Up Tables</div>
+      <div class="pub-authors">Gunho Park, Hyeokjun Kwon, Jiwoo Kim, <span class="me">Jeongin Bae</span>, Baeseong Park, Dongsoo Lee, Youngjoo Lee</div>
+      <span class="pub-venue">HPCA 2025</span>
+      <span class="tag">Hardware</span>
+    </div>
   </div>
 
+  <!-- 2024 -->
   <div class="pub-item">
-    <div class="pub-title">Unifying Uniform and Binary-Coding Quantization for Accurate Compression of Large Language Models</div>
-    <div class="pub-authors">Seungcheol Park, Jeongin Bae, Beomseok Kwon, Minjun Kim, Byeongwook Kim, Se Jung Kwon, U Kang, Dongsoo Lee</div>
-    <span class="pub-venue">ACL 2025</span>
+    <div class="pub-year-badge">2024</div>
+    <div class="pub-body">
+      <div class="pub-title">No Token Left Behind: Reliable KV Cache Compression via Importance-Aware Mixed-Precision Quantization</div>
+      <div class="pub-authors">June Yong Yang, Byeongwook Kim, <span class="me">Jeongin Bae</span>, Beomseok Kwon, Gunho Park, Eunho Yang, Se Jung Kwon, Dongsoo Lee</div>
+      <span class="pub-venue">Preprint 2024</span>
+      <span class="tag">Quantization</span>
+    </div>
+  </div>
+  <div class="pub-item">
+    <div class="pub-year-badge">2024</div>
+    <div class="pub-body">
+      <div class="pub-title">To FP8 and Back Again: Quantifying the Effects of Reducing Precision on LLM Training Stability</div>
+      <div class="pub-authors">Joonhyung Lee, <span class="me">Jeongin Bae</span>, Byeongwook Kim, Se Jung Kwon, Dongsoo Lee</div>
+      <span class="pub-venue">Preprint 2024</span>
+      <span class="tag">Quantization</span>
+    </div>
   </div>
 
+  <!-- 2022 -->
   <div class="pub-item">
-    <div class="pub-title">AnyBCQ: Hardware-Efficient Flexible Binary-Coded Quantization for Multi-Precision LLMs</div>
-    <div class="pub-authors">Gunho Park, Jeongin Bae, Beomseok Kwon, Byeongwook Kim, Se Jung Kwon, Dongsoo Lee</div>
-    <span class="pub-venue">ICLR 2026</span>
+    <div class="pub-year-badge">2022</div>
+    <div class="pub-body">
+      <div class="pub-title">AlphaTuning: Quantization-Aware Parameter-Efficient Adaptation of Large-Scale Pre-Trained Language Models</div>
+      <div class="pub-authors">Se Jung Kwon, Jeonghoon Kim, <span class="me">Jeongin Bae</span>, Kang Min Yoo, Jin-Hwa Kim, Baeseong Park, Byeongwook Kim, Jung-Woo Ha, Nako Sung, Dongsoo Lee</div>
+      <span class="pub-venue">Findings of EMNLP 2022</span>
+      <span class="tag">Quantization</span>
+    </div>
   </div>
 
-  <div class="pub-item">
-    <div class="pub-title">CodeGEMM: A Codebook-Centric Approach to Efficient GEMM in Quantized LLMs</div>
-    <div class="pub-authors">Gunho Park, Jeongin Bae, Byeongwook Kim, Jiwon Ryu, Hoseung Kim, Se Jung Kwon, Dongsoo Lee</div>
-    <span class="pub-venue">NeurIPS 2025</span>
-  </div>
-
-  <div class="pub-year">2024</div>
-
-  <div class="pub-item">
-    <div class="pub-title">No Token Left Behind: Reliable KV Cache Compression via Importance-Aware Mixed-Precision Quantization</div>
-    <div class="pub-authors">June Yong Yang, Byeongwook Kim, Jeongin Bae, Beomseok Kwon, Gunho Park, Eunho Yang, Se Jung Kwon, Dongsoo Lee</div>
-    <span class="pub-venue">Preprint 2024</span>
-  </div>
-
-  <div class="pub-item">
-    <div class="pub-title">To FP8 and Back Again: Quantifying the Effects of Reducing Precision on LLM Training Stability</div>
-    <div class="pub-authors">Joonhyung Lee, Jeongin Bae, Byeongwook Kim, Se Jung Kwon, Dongsoo Lee</div>
-    <span class="pub-venue">Preprint 2024</span>
-  </div>
-
-  <div class="pub-year">2022</div>
-
-  <div class="pub-item">
-    <div class="pub-title">Alphatuning: Quantization-Aware Parameter-Efficient Adaptation of Large-Scale Pre-Trained Language Models</div>
-    <div class="pub-authors">Se Jung Kwon, Jeonghoon Kim, Jeongin Bae, Kang Min Yoo, Jin-Hwa Kim, Baeseong Park, Byeongwook Kim, Jung-Woo Ha, Nako Sung, Dongsoo Lee</div>
-    <span class="pub-venue">Findings of EMNLP 2022</span>
-  </div>
+  <p style="font-size:0.78rem;color:var(--light);margin-top:0.5rem;">* Equal contribution</p>
 </div>
 
-<!-- PROJECTS -->
-<div id="projects" class="section">
-  <h2>Projects</h2>
-  <div class="cards">
-
-    <div class="card">
-      <div class="card-title">Quantization-Aware Training</div>
-      <div class="card-org">NAVER Cloud · 2024–2025</div>
-      <div class="card-body">Studied QAT for low-bit LLMs to recover quantization-induced degradation. Analyzed optimization settings using perplexity, MMLU, gradient norms, and weight discrepancies.</div>
+<!-- EXPERIENCE -->
+<div id="experience" class="section">
+  <h2>Experience</h2>
+  <div class="entry">
+    <div class="entry-dot"></div>
+    <div class="entry-body">
+      <div class="entry-title">Qualcomm Korea</div>
+      <div class="entry-role">Research Engineer, AI Research · Jul. 2026 –</div>
     </div>
-
-    <div class="card">
-      <div class="card-title">Vision Transformer Quantization</div>
-      <div class="card-org">NAVER Cloud · 2024–2025</div>
-      <div class="card-body">Evaluated uniform weight-only quantization for ViTs on ImageNet across multiple bit-widths. Found 2-bit causes substantial accuracy loss while 3-bit+ preserves performance.</div>
+  </div>
+  <div class="entry">
+    <div class="entry-dot"></div>
+    <div class="entry-body">
+      <div class="entry-title">NAVER Cloud, Hyperscale AI Efficiency Team</div>
+      <div class="entry-role">Research Engineer · Jun. 2023 – Jul. 2026</div>
     </div>
-
-    <div class="card">
-      <div class="card-title">Binary-Coding Quantization with REM</div>
-      <div class="card-org">NAVER Cloud · 2024–2025</div>
-      <div class="card-body">Built a pipeline to convert FlexRound checkpoints into BCQ format and optimize alpha/offset parameters with reconstruction error minimization.</div>
+  </div>
+  <div class="entry">
+    <div class="entry-dot"></div>
+    <div class="entry-body">
+      <div class="entry-title">NAVER Cloud, Efficient AI Team</div>
+      <div class="entry-role">Research Intern · Mar. 2022 – Aug. 2022</div>
     </div>
-
-    <div class="card">
-      <div class="card-title">Massive Activation Analysis</div>
-      <div class="card-org">NAVER Cloud · 2024–2025</div>
-      <div class="card-body">Identified recurring massive activation patterns and showed propagation through residual paths. Evaluated mitigation strategies including residual-path normalization.</div>
-    </div>
-
-    <div class="card">
-      <div class="card-title">Speculative Decoding Analysis</div>
-      <div class="card-org">NAVER Cloud · 2024–2025</div>
-      <div class="card-body">Studied speculative decoding and rejection sampling; built an efficient acceptance-rate evaluation pipeline by caching verifier logits. Fixed inference issues in vLLM.</div>
-    </div>
-
-    <div class="card">
-      <div class="card-title">KV Cache Quantization</div>
-      <div class="card-org">NAVER Cloud · 2024–2025</div>
-      <div class="card-body">Collaborated on hardware-aware KV cache quantization. Implemented per-output-channel quantization and benchmarked on MMLU and LongBench.</div>
-    </div>
-
-    <div class="card">
-      <div class="card-title">MoE-to-Dense Distillation</div>
-      <div class="card-org">NAVER Cloud · 2024–2025</div>
-      <div class="card-body">Investigated distilling Mixture-of-Experts models into dense models. Expert-based initialization consistently outperformed random initialization.</div>
-    </div>
-
-    <div class="card">
-      <div class="card-title">Pruning &amp; Distillation Architecture Search</div>
-      <div class="card-org">NAVER Cloud · 2024–2025</div>
-      <div class="card-body">Studied student architecture design for pruning and distillation. Preserving depth generally yielded better performance under matched inference-cost settings.</div>
-    </div>
-
-    <div class="card">
-      <div class="card-title">Compressed LLM Production</div>
-      <div class="card-org">NAVER Cloud · 2024–2025</div>
-      <div class="card-body">Contributed to 4B and 14B model releases with quantized evaluation, model cards, qualitative analysis, and contributions to HyperCLOVA technical reports.</div>
-    </div>
-
-    <div class="card">
-      <div class="card-title">Mixed Precision &amp; Sensitivity Analysis</div>
-      <div class="card-org">Qualcomm Korea · 2026</div>
-      <div class="card-body">Analyzed layer-wise sensitivity for mixed-precision quantization using weight–activation magnitude, downstream-task one-hot assignment, Hessian-based sensitivity, and reconstruction error.</div>
-    </div>
-
   </div>
 </div>
 
 <!-- TALKS -->
 <div id="talks" class="section">
   <h2>Talks</h2>
-
-  <div class="item-row">
-    <div class="item-title">Advancements in Large Language Models and the Latest AI Technology Trends</div>
-    <div class="item-meta">Presidential Committee on AI Strategy &nbsp;·&nbsp; Seoul, Korea &nbsp;·&nbsp; Feb. 2026</div>
-    <div class="item-body">Delivered an invited talk on recent advances in large language models and AI technology trends.</div>
+  <div class="misc-item">
+    <div class="misc-title">Advancements in Large Language Models and the Latest AI Technology Trends</div>
+    <div class="misc-meta">Presidential Committee on AI Strategy · Seoul · Feb. 2026</div>
   </div>
-
-  <div class="item-row">
-    <div class="item-title">Efficient LLM Training &amp; Inference Under Compute Constraints</div>
-    <div class="item-meta">NAVER Cloud Engineering Day &nbsp;·&nbsp; Seoul, Korea &nbsp;·&nbsp; May 2025</div>
-    <div class="item-body">Delivered a talk on efficient LLM training and inference under compute constraints.</div>
+  <div class="misc-item">
+    <div class="misc-title">Efficient LLM Training &amp; Inference Under Compute Constraints</div>
+    <div class="misc-meta">NAVER Cloud Engineering Day · Seoul · May 2025</div>
   </div>
-
-  <div class="item-row">
-    <div class="item-title">Evaluating Large Language Models</div>
-    <div class="item-meta">Intel &amp; NAVER Cloud &nbsp;·&nbsp; Seoul, Korea &nbsp;·&nbsp; Jun. 2024</div>
-    <div class="item-body">Gave a seminar on evaluation benchmarks for large language models.</div>
+  <div class="misc-item">
+    <div class="misc-title">Evaluating Large Language Models</div>
+    <div class="misc-meta">Intel &amp; NAVER Cloud · Seoul · Jun. 2024</div>
   </div>
 </div>
 
-<!-- OPEN SOURCE -->
-<div id="oss" class="section">
-  <h2>Open Source Contributions</h2>
-
-  <div class="item-row">
-    <div class="item-title">vLLM</div>
-    <div class="item-meta">November 2024</div>
-    <div class="item-body">Fixed a speculative decoding inconsistency by applying sampling parameters to target probabilities during rejection sampling. Merged a fix improving acceptance-rate consistency.</div>
+<!-- SERVICE -->
+<div id="service" class="section">
+  <h2>Service &amp; Open Source</h2>
+  <div class="misc-item">
+    <div class="misc-title">vLLM — Open Source Contribution</div>
+    <div class="misc-meta">November 2024</div>
+    <div class="misc-body">Fixed a speculative decoding inconsistency during rejection sampling. Merged upstream.</div>
   </div>
-
-  <div class="item-row">
-    <div class="item-title">HuggingFace Transformers</div>
-    <div class="item-meta">November 2024</div>
-    <div class="item-body">Fixed a prefill-phase key-value caching bug for Nemotron and Minitron models. Merged support for correct cache creation and reuse during autoregressive inference.</div>
+  <div class="misc-item">
+    <div class="misc-title">HuggingFace Transformers — Open Source Contribution</div>
+    <div class="misc-meta">November 2024</div>
+    <div class="misc-body">Fixed a KV cache bug for Nemotron/Minitron during autoregressive inference. Merged upstream.</div>
   </div>
-</div>
-
-<!-- MENTORING -->
-<div id="mentoring" class="section">
-  <h2>Mentoring</h2>
-
-  <div class="item-row">
-    <div class="item-title">Daejeon Science High School for the Gifted (DSHS)</div>
-    <div class="item-meta">Alumni Career Mentor &nbsp;·&nbsp; 2025, 2026</div>
-    <div class="item-body">Provided career mentoring to high school students, sharing experiences in AI research and industry.</div>
+  <div class="misc-item">
+    <div class="misc-title">Daejeon Science High School for the Gifted — Alumni Career Mentor</div>
+    <div class="misc-meta">2025, 2026</div>
   </div>
-
-  <div class="item-row">
-    <div class="item-title">KAIST Cyber Gifted Education Center</div>
-    <div class="item-meta">Science &amp; Programming Mentor for K–9 Students</div>
-    <div class="item-body">Supported gifted elementary and middle school students in science and programming fundamentals.</div>
-  </div>
-
-  <div class="item-row">
-    <div class="item-title">National Science Museum</div>
-    <div class="item-meta">Science Mentor &nbsp;·&nbsp; Jul.–Aug. 2020; Jan.–Feb. 2021 &nbsp;·&nbsp; Daejeon, Korea</div>
-    <div class="item-body">Mentored elementary and middle school students in science education across two sessions.</div>
+  <div class="misc-item">
+    <div class="misc-title">KAIST Cyber Gifted Education Center — Mentor</div>
+    <div class="misc-meta">Science &amp; Programming for K–9 Students</div>
   </div>
 </div>
 
@@ -439,17 +402,17 @@
 <div id="education" class="section">
   <h2>Education</h2>
   <div class="entry">
-    <div class="entry-header">
-      <span class="entry-title">Korea Advanced Institute of Science &amp; Technology (KAIST)</span>
-      <span class="entry-loc">Daejeon, Korea</span>
+    <div class="entry-dot"></div>
+    <div class="entry-body">
+      <div class="entry-title">KAIST — B.S. in Computer Science</div>
+      <div class="entry-role">Feb. 2019 – Aug. 2023 · Daejeon, Korea</div>
     </div>
-    <div class="entry-role">B.S. in Computer Science &nbsp;·&nbsp; Feb. 2019 – Aug. 2023</div>
   </div>
 </div>
 
 <!-- FOOTER -->
 <footer>
-  © 2026 Jeongin Bae &nbsp;·&nbsp; Last updated October 2026
+  © 2026 Jeongin Bae · Last updated October 2026
 </footer>
 
 </body>
